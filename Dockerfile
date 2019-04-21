@@ -1,16 +1,13 @@
-FROM node:10-alpine
+FROM node:lts-slim
 
-# Install serve
 RUN yarn global add serve
 
-# Creating mountpoint
-RUN mkdir /serve
+COPY entrypoint.sh /app/entrypoint.sh
 
-# Add shared mountpoint
+RUN chmod +x /app/entrypoint.sh
+
 VOLUME /serve
 
-# Exposing serve's default port
 EXPOSE 5000
 
-# Serving
-CMD [ "serve /serve" ]
+ENTRYPOINT ["/app/entrypoint.sh"]
