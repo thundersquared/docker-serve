@@ -3,6 +3,9 @@ FROM node:10-alpine
 # Install serve
 RUN yarn global add serve
 
+# Creating mountpoint
+RUN mkdir /serve
+
 # Add shared mountpoint
 VOLUME /serve
 
