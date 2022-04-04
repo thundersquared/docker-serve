@@ -9,6 +9,6 @@ RUN chmod +x /app/entrypoint.sh
 
 VOLUME /serve
 
-EXPOSE 5000
+EXPOSE 3000
 
 ENTRYPOINT ["/app/entrypoint.sh"]
