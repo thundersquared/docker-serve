@@ -6,4 +6,4 @@ do
   sleep 1
 done
 
-serve /serve
+serve --config /app/serve.json /serve
